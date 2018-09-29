@@ -65,7 +65,9 @@ class SearchBooks extends Component {
                 return
             }
             const merged_books = books.map((b) => {
-                b.shelf = "NONE"
+                // Forcibly set the shelf of the retrieve book to none
+                // since it is not part of our library by default
+                b.shelf = "none"
                 return propsBooks[b.id] || b
             })
             this.setState({ books: merged_books })
@@ -117,10 +119,10 @@ class SearchBooks extends Component {
                                             <div className="book-shelf-changer">
                                                 <select onChange={(e) => onBookShelfChange(e, book)} value={book.shelf}>
                                                     <option value="move" disabled>Move to...</option>
-                                                    <option value="CURRENTLY_READING">Currently Reading</option>
-                                                    <option value="WANT_TO_READ">Want to Read</option>
-                                                    <option value="READ">Read</option>
-                                                    <option value="NONE">None</option>
+                                                    <option value="currentlyReading">Currently Reading</option>
+                                                    <option value="wantToRead">Want to Read</option>
+                                                    <option value="read">Read</option>
+                                                    <option value="none">None</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -133,7 +135,6 @@ class SearchBooks extends Component {
                             )
                         }
                         )}
-
                     </ol>
                 </div>
             </div>
