@@ -1,8 +1,14 @@
 # MyReads Project
 
-This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
+This is a small reading bookshelf project that uses React. The user has the ability to add books
+to 3 different virtual bookshelfs which are the following:
+* _Currently Reading_: the book is currently being read by the user
+* _Want To Read_: the book is in the user's wishlish
+* _Read_: the book has been read by the user
 
-Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
+Moreover, there is also the not displayed _none_ shelf, which is a catch-all shelf for any book that is not in the three categories above. Naturally, the user is able to move books from one bookshelf to another.
+
+Finally, the user has the ability to search for books and add them to one of their virtual bookshelfs.
 
 ## TL;DR
 
@@ -11,7 +17,8 @@ To get started developing right away:
 * install all project dependencies with `npm install`
 * start the development server with `npm start`
 
-## What You're Getting
+## Files & Architecture
+
 ```bash
 ├── CONTRIBUTING.md
 ├── README.md - This file.
@@ -25,6 +32,8 @@ To get started developing right away:
     ├── App.js # This is the root of your app. Contains static HTML right now.
     ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
     ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
+    ├── Bookshelf.js # A React Controlled Component which manages the state of one of the three main virtual booshelfs
+    ├── SearchBooks.js # A React Controlled Component which is able to search for books given a query and display the results in a grid, like the bookshelf    
     ├── icons # Helpful images for your app. Use at your discretion.
     │   ├── add.svg
     │   ├── arrow-back.svg
